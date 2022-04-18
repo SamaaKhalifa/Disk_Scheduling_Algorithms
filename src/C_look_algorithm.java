@@ -6,6 +6,7 @@ public class C_look_algorithm  extends Shared_algorithm implements Disk_Scheduli
         super(input_cylinders,head);
         input_temp=new ArrayList<>(input_cylinders);
     }
+
     @Override
     public void scheduling() {
         sort(input_temp);

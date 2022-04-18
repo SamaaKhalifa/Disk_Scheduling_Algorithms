@@ -10,9 +10,14 @@ public class Main {
         Disk_Scheduling_Algorithm look=new Look_algorithm(example1,53);
         Disk_Scheduling_Algorithm C_look=new C_look_algorithm(example1,53);
         Disk_Scheduling_Algorithm FCFS=new FCFS_algorithm(example1,53);
+        Disk_Scheduling_Algorithm NewlyOptimized = new NewlyOptimizedAlgorithm(example2);
+        Disk_Scheduling_Algorithm SSTF = new SSTF(example2,120);
 
-        look.scheduling();
-        C_look.scheduling();
-        FCFS.scheduling();
+        //look.scheduling();
+        //C_look.scheduling();
+       // FCFS.scheduling();
+     //   NewlyOptimized.scheduling();
+        SSTF.scheduling();
+
     }
 }

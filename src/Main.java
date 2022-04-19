@@ -1,10 +1,6 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-
+/*
         ArrayList<Integer> ex=new ArrayList<>();
         Scanner in = new Scanner(System.in);
 
@@ -23,6 +19,7 @@ public class Main {
 
         //ArrayList<Integer> example1=new ArrayList<>(Arrays.asList(98,183,37,122,14,124,65,67));
         //ArrayList<Integer> example2=new ArrayList<>(Arrays.asList(38,180,130,10,50,15,190,90,150));
+        //38 100 130 10 50 15 190 90 150
 
 
         Disk_Scheduling_Algorithm look=new Look_algorithm(ex,start);
@@ -42,6 +39,9 @@ public class Main {
         SSTF.scheduling();
         Scan.scheduling();
         C_scan.scheduling();
+        */
+
+        GUI gui = new GUI();
 
     }
 }

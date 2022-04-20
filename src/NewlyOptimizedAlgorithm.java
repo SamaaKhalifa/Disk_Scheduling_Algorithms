@@ -8,13 +8,12 @@ public class NewlyOptimizedAlgorithm  extends Shared_algorithm implements Disk_S
 
 
     @Override
-    public void scheduling() {
-        sort(input_cylinders);
+    public ArrayList<Integer> scheduling() {
+        cylinders.add(0);
+        sort(input_temp);
+        cylinders.addAll(input_temp);
+        System.out.println("Newly optimized algorithm Total Movement = "+ input_temp.get(input_temp.size()-1));
 
-        System.out.print("Newly optimized algorithm = ");
-        for (Integer cylinder : input_cylinders) System.out.print(cylinder + " ");
-        System.out.print("\t");
-        System.out.println("Total Movement = "+input_cylinders.get(input_cylinders.size()-1));
-
+        return cylinders;
     }
 }

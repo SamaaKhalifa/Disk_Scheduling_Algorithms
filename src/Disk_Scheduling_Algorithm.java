@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public interface Disk_Scheduling_Algorithm {
-    void scheduling();
+    ArrayList<Integer> scheduling();
 }

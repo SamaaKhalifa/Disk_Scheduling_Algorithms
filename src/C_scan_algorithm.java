@@ -10,7 +10,7 @@ public class C_scan_algorithm extends Shared_algorithm implements Disk_Schedulin
     }
 
     @Override
-    public void scheduling() {
+    public ArrayList<Integer> scheduling() {
         int counter=0,size=input_temp.size(),start=head_start;
         boolean f=true;
         cylinders.add(start);
@@ -44,14 +44,8 @@ public class C_scan_algorithm extends Shared_algorithm implements Disk_Schedulin
             cylinders.add(start);
         }
 
-        System.out.print("C_Scan algorithm: ");
-        for(int i=0;i<cylinders.size()-1;i++)
-        {
-            System.out.print(cylinders.get(i)+"->");
-        }
-        System.out.print(cylinders.get(cylinders.size()-1));
+        System.out.println("C_Scan algorithm Total movement= "+Total_Movement);
 
-        System.out.println("\t Total movement= "+Total_Movement);
-
+        return cylinders;
     }
 }

@@ -1,6 +1,10 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-/*
+
         ArrayList<Integer> ex=new ArrayList<>();
         Scanner in = new Scanner(System.in);
 
@@ -17,7 +21,9 @@ public class Main {
         System.out.println("Enter position of head pointer");
         int start = in.nextInt();
 
-        //ArrayList<Integer> example1=new ArrayList<>(Arrays.asList(98,183,37,122,14,124,65,67));
+        //ArrayList<Integer> ex=new ArrayList<>(Arrays.asList(98,183,37,122,14,124,65,67));
+        //int start =53;
+        ArrayList<ArrayList<Integer>> input = new ArrayList<>();
         //ArrayList<Integer> example2=new ArrayList<>(Arrays.asList(38,180,130,10,50,15,190,90,150));
         //38 100 130 10 50 15 190 90 150
 
@@ -32,16 +38,28 @@ public class Main {
         Disk_Scheduling_Algorithm Scan=new Scan_algorithm(ex,start);
         Disk_Scheduling_Algorithm C_scan=new C_scan_algorithm(ex,start);
 
-        look.scheduling();
-        C_look.scheduling();
-        FCFS.scheduling();
-        NewlyOptimized.scheduling();
-        SSTF.scheduling();
-        Scan.scheduling();
-        C_scan.scheduling();
-        */
+        ArrayList<Integer> output;
+        output = FCFS.scheduling();
+        input.add(output);
 
-        GUI gui = new GUI();
+        output = SSTF.scheduling();
+        input.add(output);
 
+        output = Scan.scheduling();
+        input.add(output);
+
+        output = C_scan.scheduling();
+        input.add(output);
+
+        output = look.scheduling();
+        input.add(output);
+
+        output = C_look.scheduling();
+        input.add(output);
+
+        output = NewlyOptimized.scheduling();
+        input.add(output);
+
+        new GUI(input);
     }
 }

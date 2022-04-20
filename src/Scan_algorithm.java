@@ -11,7 +11,7 @@ public class Scan_algorithm extends Shared_algorithm implements Disk_Scheduling_
 
 
     @Override
-    public void scheduling() {
+    public ArrayList<Integer> scheduling() {
         int counter=0,size=input_temp.size(),start=head_start;
         boolean f=true;
 
@@ -58,13 +58,7 @@ public class Scan_algorithm extends Shared_algorithm implements Disk_Scheduling_
             }
         }
 
-        System.out.print("Scan algorithm : ");
-        for(int i=0;i<cylinders.size()-1;i++)
-        {
-            System.out.print(cylinders.get(i)+"->");
-        }
-        System.out.print(cylinders.get(cylinders.size()-1));
-
-        System.out.println("\t Total movement= "+Total_Movement);
+        System.out.println("Scan algorithm Total movement= "+Total_Movement);
+        return cylinders;
     }
 }

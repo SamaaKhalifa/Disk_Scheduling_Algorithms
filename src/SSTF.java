@@ -1,9 +1,11 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class SSTF extends Shared_algorithm implements Disk_Scheduling_Algorithm {
+
+    private final ArrayList<Integer> input_temp;
     SSTF(ArrayList<Integer>inputCylindrs,int head){
         super(inputCylindrs,head);
+        input_temp = new ArrayList<>(inputCylindrs);
     }
 
     int getClosestCylinder (final ArrayList<Integer> list, int head){
@@ -18,14 +20,15 @@ public class SSTF extends Shared_algorithm implements Disk_Scheduling_Algorithm 
     }
 
     @Override
-    public void scheduling() {
-        int size = input_cylinders.size();
+    public ArrayList<Integer> scheduling() {
+        int size = input_temp.size();
         int currentHead = head_start;
+        cylinders.add(head_start);
         for (int i = 0; i <size ; i++) {
-            int closest =getClosestCylinder(input_cylinders, currentHead);
+            int closest =getClosestCylinder(input_temp, currentHead);
 
             Total_Movement += closest;
-            if(input_cylinders.contains(currentHead + closest))
+            if(input_temp.contains(currentHead + closest))
             {
                 currentHead = currentHead + closest;
             }
@@ -34,15 +37,10 @@ public class SSTF extends Shared_algorithm implements Disk_Scheduling_Algorithm 
                 currentHead = currentHead - closest;
             }
             cylinders.add(currentHead);
-            input_cylinders.remove((Integer) currentHead);
+            input_temp.remove((Integer) currentHead);
         }
 
-        System.out.print("SSTF algorithm : ");
-        for (Integer cylinder : cylinders) System.out.print(cylinder + " ");
-        System.out.print("\t");
-        System.out.println("Total Movement = "+ Total_Movement);
-
-
-
+        System.out.println("SSTF algorithm Total Movement = "+ Total_Movement);
+        return cylinders;
     }
 }

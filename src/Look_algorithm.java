@@ -8,9 +8,10 @@ public class Look_algorithm extends Shared_algorithm implements Disk_Scheduling_
     }
 
     @Override
-    public void scheduling(){
+    public ArrayList<Integer> scheduling(){
         sort(input_temp);
         int startpoint=0;
+        cylinders.add(head_start);
         for (int i = 0; i< input_temp.size(); i++){
             if (input_temp.get(i)>head_start){
                 startpoint=i-1;
@@ -28,10 +29,8 @@ public class Look_algorithm extends Shared_algorithm implements Disk_Scheduling_
             cylinders.add(input_temp.get(i));
             start=input_temp.get(i);
         }
-        System.out.print("Look algorithm = ");
-        for (Integer cylinder : cylinders) System.out.print(cylinder + " ");
-        System.out.print("\t");
-        System.out.println("Total Movement = "+Total_Movement);
+        System.out.println("Look algorithm Total Movement = "+Total_Movement);
+        return cylinders;
     }
 
 }
